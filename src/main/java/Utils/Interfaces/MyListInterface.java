@@ -1,6 +1,5 @@
 package Utils.Interfaces;
 
-import java.util.Comparator;
 
 public interface MyListInterface<T> extends Iterable<T>{
     void add(T item);

@@ -4,7 +4,6 @@ import Utils.Exceptions.MyNoSuchElementException;
 import Utils.Exceptions.MyIndexOutOfBoundsException;
 import Utils.Interfaces.MyListInterface;
 
-import java.util.Comparator;
 import java.util.Iterator;
 
 

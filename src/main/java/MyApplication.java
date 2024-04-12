@@ -1,9 +1,6 @@
 import Utils.MyArrayList;
 import Utils.MyLinkedList;
-import org.w3c.dom.Node;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 
 
 @SuppressWarnings("unchecked")

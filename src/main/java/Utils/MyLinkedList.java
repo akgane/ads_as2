@@ -3,7 +3,6 @@ package Utils;
 import Utils.Exceptions.MyIndexOutOfBoundsException;
 import Utils.Exceptions.MyNoSuchElementException;
 import Utils.Interfaces.MyListInterface;
-import com.sun.source.tree.NewArrayTree;
 
 import java.util.Iterator;
 
@@ -161,11 +160,6 @@ public class MyLinkedList<T> implements MyListInterface<T> {
         private MyNode<E> prev;
         private MyNode<E> next;
 
-        MyNode(E element) {
-            this.element = element;
-            this.prev = null;
-            this.next = null;
-        }
         MyNode(MyNode<E> prev, E element, MyNode<E> next){
             this.element = element;
             this.prev = prev;
