@@ -1,7 +1,7 @@
 import Utils.MyArrayList;
 
-import java.util.ArrayList;
 
+@SuppressWarnings("unchecked")
 public class MyApplication {
     public static void main(String[] args) {
         MyArrayList arr = new MyArrayList();
