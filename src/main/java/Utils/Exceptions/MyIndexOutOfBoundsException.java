@@ -1,7 +1,7 @@
 package Utils.Exceptions;
 
 public class MyIndexOutOfBoundsException extends RuntimeException{
-    public MyIndexOutOfBoundsException(String message, int index){
-        super(String.format(message, index));
+    public MyIndexOutOfBoundsException(int index){
+        super(String.format("Index out of bounds: %d.", index));
     }
 }

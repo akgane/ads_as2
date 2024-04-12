@@ -1,5 +1,7 @@
 package Utils.Interfaces;
 
+import java.util.Comparator;
+
 public interface MyListInterface<T> extends Iterable<T>{
     void add(T item);
     void set(int index, T item);
@@ -12,12 +14,11 @@ public interface MyListInterface<T> extends Iterable<T>{
     void remove(int index);
     void removeFirst();
     void removeLast();
+    void sort();
     int indexOf(Object object);
     int lastIndexOf(Object object);
     boolean exists(Object object);
     Object[] toArray();
     void clear();
     int size();
-    void checkIndex(int index);
-    void increaseBuffer();
 }

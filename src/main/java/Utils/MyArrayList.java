@@ -4,6 +4,7 @@ import Utils.Exceptions.MyNoSuchElementException;
 import Utils.Exceptions.MyIndexOutOfBoundsException;
 import Utils.Interfaces.MyListInterface;
 
+import java.util.Comparator;
 import java.util.Iterator;
 
 
@@ -86,6 +87,11 @@ public class MyArrayList<T> implements MyListInterface<T> {
     }
 
     @Override
+    public void sort() {
+
+    }
+
+    @Override
     public int indexOf(Object object) {
         for(int i = 0; i < size; i++) if(arr[i] == object) return i;
         return -1;
@@ -123,12 +129,10 @@ public class MyArrayList<T> implements MyListInterface<T> {
         if(size == arr.length) increaseBuffer();
     }
 
-    @Override
     public void checkIndex(int index) {
-        if(index < 0 || index >= size) throw new MyIndexOutOfBoundsException("Index out of bounds: %d.", index);
+        if(index < 0 || index >= size) throw new MyIndexOutOfBoundsException(index);
     }
 
-    @Override
     public void increaseBuffer() {
         T[] newArr = (T[]) new Object[arr.length + 1];
         System.arraycopy(arr, 0, newArr, 0, arr.length);
