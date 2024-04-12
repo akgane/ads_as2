@@ -12,8 +12,6 @@ public class MyArrayList<T> implements MyListInterface<T> {
     private T[] arr;
     private int size;
     private final int DEFAULT_SIZE = 5;
-    private final String INDEX_OUT_OF_BOUNDS = "Index out of bounds: %d.";
-    private final String LIST_IS_EMPTY = "Can't get element from empty list.";
 
     public MyArrayList(){
         arr = (T[]) new Object[DEFAULT_SIZE];
@@ -127,7 +125,7 @@ public class MyArrayList<T> implements MyListInterface<T> {
 
     @Override
     public void checkIndex(int index) {
-        if(index < 0 || index >= size) throw new MyIndexOutOfBoundsException(INDEX_OUT_OF_BOUNDS, index);
+        if(index < 0 || index >= size) throw new MyIndexOutOfBoundsException("Index out of bounds: %d.", index);
     }
 
     @Override
