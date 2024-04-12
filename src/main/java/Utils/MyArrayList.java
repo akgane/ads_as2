@@ -22,59 +22,59 @@ public class MyArrayList<T> implements MyListInterface<T> {
 
     @Override
     public void add(T item) {
-        if(size == arr.length) increaseBuffer();
+        checkSize();
         arr[size++] = item;
     }
 
     @Override
     public void set(int index, T item) {
-        if(size == arr.length) increaseBuffer();
+        checkSize();
         checkIndex(index);
         arr[index] = item;
     }
 
     @Override
     public void add(int index, T item) {
-
+        checkSize();
+        checkIndex(index);
+        System.arraycopy(arr, index, arr, index + 1, size - index);
+        arr[index] = item;
+        size++;
     }
 
     @Override
     public void addFirst(T item) {
-
+        add(0, item);
     }
 
     @Override
     public void addLast(T item) {
-
+        add(item);
     }
 
     @Override
     public T get(int index) {
         checkIndex(index);
-        if(size >= index) return arr[index];
-        throw new MyIndexOutOfBoundsException(INDEX_OUT_OF_BOUNDS, index);
+        return arr[index];
     }
 
     @Override
     public T getFirst() {
-        if(size > 0) return get(0);
-        throw new MyNoSuchElementException(LIST_IS_EMPTY);
+        checkIndex(0);
+        return get(0);
     }
 
     @Override
     public T getLast() {
-        if(size > 0) return get(size - 1);
-        throw new MyIndexOutOfBoundsException(LIST_IS_EMPTY);
+        checkIndex(size - 1);
+        return get(size - 1);
     }
 
     @Override
     public void remove(int index) {
-        if(size >= index) {
-            for(int i = index + 1; i < size; i++) arr[i - 1] = arr[i];
-            size--;
-            return;
-        }
-        throw new MyIndexOutOfBoundsException(INDEX_OUT_OF_BOUNDS, index);
+        checkIndex(index);
+        for(int i = index + 1; i < size; i++) arr[i - 1] = arr[i];
+        size--;
     }
 
     @Override
@@ -107,7 +107,7 @@ public class MyArrayList<T> implements MyListInterface<T> {
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        return arr;
     }
 
     @Override
@@ -121,15 +121,19 @@ public class MyArrayList<T> implements MyListInterface<T> {
         return size;
     }
 
+    private void checkSize(){
+        if(size == arr.length) increaseBuffer();
+    }
+
     @Override
     public void checkIndex(int index) {
-        if(index < 0 || index >= size) throw new IndexOutOfBoundsException();
+        if(index < 0 || index >= size) throw new MyIndexOutOfBoundsException(INDEX_OUT_OF_BOUNDS, index);
     }
 
     @Override
     public void increaseBuffer() {
-        T[] newArr = (T[]) new Object[arr.length * 2];
-        for(int i = 0; i < arr.length; i++) newArr[i] = arr[i];
+        T[] newArr = (T[]) new Object[arr.length + 1];
+        System.arraycopy(arr, 0, newArr, 0, arr.length);
         arr = newArr;
     }
 
@@ -142,7 +146,8 @@ public class MyArrayList<T> implements MyListInterface<T> {
         private int currentIndex = 0;
         @Override
         public boolean hasNext() {
-            return currentIndex < arr.length;
+            while(currentIndex < size && arr[currentIndex] == null) currentIndex++;
+            return currentIndex < size;
         }
 
         @Override
