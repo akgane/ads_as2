@@ -1,4 +1,4 @@
-package Utils;
+package Utils.MyClasses;
 
 import Utils.Exceptions.MyIndexOutOfBoundsException;
 import Utils.Exceptions.MyNoSuchElementException;
@@ -176,7 +176,7 @@ public class MyLinkedList<T> implements MyListInterface<T> {
 
         @Override
         public E next(){
-            if(!hasNext()) throw new MyNoSuchElementException("Index out of bounds.");
+            if(!hasNext()) throw new MyNoSuchElementException("No such element exception.");
             return (E) get(currentIndex++);
         }
     }

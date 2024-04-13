@@ -1,10 +1,11 @@
-package Utils;
+package Utils.MyClasses;
 
 import Utils.Exceptions.MyNoSuchElementException;
 import Utils.Exceptions.MyIndexOutOfBoundsException;
 import Utils.Interfaces.MyListInterface;
 
 import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 @SuppressWarnings("unchecked")
@@ -92,19 +93,19 @@ public class MyArrayList<T> implements MyListInterface<T> {
 
     @Override
     public int indexOf(Object object) {
-        for(int i = 0; i < size; i++) if(arr[i] == object) return i;
+        for(int i = 0; i < size; i++) if(arr[i].equals(object)) return i;
         return -1;
     }
 
     @Override
     public int lastIndexOf(Object object) {
-        for(int i = size - 1; i >= 0; i--) if(arr[i] == object) return i;
+        for(int i = size - 1; i >= 0; i--) if(arr[i].equals(object)) return i;
         return -1;
     }
 
     @Override
     public boolean exists(Object object) {
-        for(T item : arr) if(item == object) return true;
+        for(T item : arr) if(item.equals(object)) return true;
         return false;
     }
 
@@ -153,7 +154,7 @@ public class MyArrayList<T> implements MyListInterface<T> {
 
         @Override
         public E next() {
-            if(!hasNext()) throw new MyNoSuchElementException("Index out of bounds.");
+            if(!hasNext()) throw new MyNoSuchElementException("No such element exception.");
             return (E) arr[currentIndex++];
         }
     }

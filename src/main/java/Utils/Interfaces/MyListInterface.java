@@ -1,6 +1,5 @@
 package Utils.Interfaces;
 
-
 public interface MyListInterface<T> extends Iterable<T>{
     void add(T item);
     void set(int index, T item);

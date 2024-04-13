@@ -1,6 +1,5 @@
-import Utils.MyArrayList;
-import Utils.MyLinkedList;
-
+import Utils.MyClasses.MyArrayList;
+import Utils.MyClasses.MyStack;
 
 
 @SuppressWarnings("unchecked")
@@ -52,34 +51,45 @@ public class MyApplication {
 //        printArr(arr, "After clear(): ");
 
 
-        MyLinkedList linkedList = new MyLinkedList();
-        linkedList.add("asd");
-        linkedList.add(12);
-        linkedList.add('c');
+//        MyLinkedList linkedList = new MyLinkedList();
+//        linkedList.add("asd");
+//        linkedList.add(12);
+//        linkedList.add('c');
+//
+//        printLinked(linkedList.toArray(), "First ll: ");
+//
+//        linkedList.add(1, "index1");
+//        linkedList.addFirst("first");
+//        linkedList.addLast("last");
+//        linkedList.set(3, "3");
+//
+//        printLinked(linkedList.toArray(), "After add, addFirst, addLast, set(3): ");
+//
+//        System.out.println(linkedList.getFirst());
+//        System.out.println(linkedList.getLast());
+//        System.out.println(linkedList.indexOf("asd"));
+//        System.out.println(linkedList.lastIndexOf('c'));
+//
+//        linkedList.remove(1);
+//        linkedList.removeFirst();
+//        linkedList.removeLast();
+//
+//        System.out.println(linkedList.size());
+//        printLinked(linkedList.toArray(), "After remove(1), removeFirst, removeLast: ");
 
-        printLinked(linkedList.toArray(), "First ll: ");
 
-        linkedList.add(1, "index1");
-        linkedList.addFirst("first");
-        linkedList.addLast("last");
-        linkedList.set(3, "3");
+        MyStack stack = new MyStack();
 
-        printLinked(linkedList.toArray(), "After add, addFirst, addLast, set(3): ");
+        stack.add(12);
+        stack.add(32);
+        stack.add('g');
+        stack.add("asd");
+        stack.add(true);
 
-        System.out.println(linkedList.getFirst());
-        System.out.println(linkedList.getLast());
-        System.out.println(linkedList.indexOf("asd"));
-        System.out.println(linkedList.lastIndexOf('c'));
-
-        linkedList.remove(1);
-        linkedList.removeFirst();
-        linkedList.removeLast();
-
-        System.out.println(linkedList.size());
-        printLinked(linkedList.toArray(), "After remove(1), removeFirst, removeLast: ");
+        System.out.println(stack.getLast());
     }
 
-    void printArr(MyArrayList arr, String m){
+    static void printArr(MyArrayList arr, String m){
         System.out.println(m);
         for(Object i : arr) System.out.print(i + " ");
         System.out.println();
