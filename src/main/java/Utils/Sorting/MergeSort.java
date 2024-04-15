@@ -1,6 +1,5 @@
 package Utils.Sorting;
 
-import jdk.jshell.spi.ExecutionControl;
 
 //TODO CLASS
 public class MergeSort {
@@ -12,8 +11,10 @@ public class MergeSort {
         }
         else{
             if(arr.length % 2 == 0){
+                throw new UnsupportedOperationException("Not implemented yet");
             }
         }
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public static long[] mergeSort(long[] arr){
