@@ -21,12 +21,10 @@ public class MyLinkedList<T> implements MyListInterface<T> {
     @Override
     public void add(T item) {
         MyNode<T> newNode = new MyNode<>(null, item, null);
-        if(head == null){
-            head = newNode;
-        }
+        if(head == null) head = newNode;
         else{
-            newNode.prev = getNode(size - 1);
-            getNode(size - 1).next = newNode;
+            newNode.prev = tail;
+            tail.next = newNode;
         }
         tail = newNode;
         size++;
@@ -72,7 +70,7 @@ public class MyLinkedList<T> implements MyListInterface<T> {
 
     @Override
     public T getLast() {
-        return get(size - 1);
+        return tail.element;
     }
 
     @Override
@@ -104,19 +102,19 @@ public class MyLinkedList<T> implements MyListInterface<T> {
 
     @Override
     public int indexOf(Object object) {
-        for(int i = 0; i < size; i++) if(get(i) == object) return i;
+        for(int i = 0; i < size; i++) if(get(i).equals(object)) return i;
         return -1;
     }
 
     @Override
     public int lastIndexOf(Object object) {
-        for(int i = size - 1; i >= 0; i--) if(get(i) == object) return i;
+        for(int i = size - 1; i >= 0; i--) if(get(i).equals(object)) return i;
         return -1;
     }
 
     @Override
     public boolean exists(Object object) {
-        for(int i = 0; i < size; i++) if(get(i) == object) return true;
+        for(int i = 0; i < size; i++) if(get(i).equals(object)) return true;
         return false;
     }
 

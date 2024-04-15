@@ -1,6 +1,8 @@
 import Utils.MyClasses.MyArrayList;
 import Utils.MyClasses.MyStack;
 
+import java.util.ArrayList;
+
 
 @SuppressWarnings("unchecked")
 public class MyApplication {
@@ -87,6 +89,8 @@ public class MyApplication {
         stack.add(true);
 
         System.out.println(stack.getLast());
+
+
     }
 
     static void printArr(MyArrayList arr, String m){
