@@ -130,8 +130,14 @@ public class MyArrayList<T> implements MyListInterface<T> {
         if(size == arr.length) increaseBuffer();
     }
 
-    public void checkIndex(int index) {
+    protected void checkIndex(int index) {
         if(index < 0 || index >= size) throw new MyIndexOutOfBoundsException(index);
+    }
+
+    protected void swapElements(int i, int j){
+        T temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
     public void increaseBuffer() {

@@ -1,4 +1,5 @@
 import Utils.MyClasses.MyArrayList;
+import Utils.MyClasses.MyMinHeap;
 import Utils.MyClasses.MyStack;
 
 import java.util.ArrayList;
@@ -80,16 +81,25 @@ public class MyApplication {
 //        printLinked(linkedList.toArray(), "After remove(1), removeFirst, removeLast: ");
 
 
-        MyStack stack = new MyStack();
+//        MyStack stack = new MyStack();
+//
+//        stack.push(123);
+//        stack.push("asd");
+//        stack.push(43);
+//        stack.push('c');
+//
+//        System.out.println(stack.get());
 
-        stack.add(12);
-        stack.add(32);
-        stack.add('g');
-        stack.add("asd");
-        stack.add(true);
 
-        System.out.println(stack.getLast());
-
+        MyMinHeap minHeap = new MyMinHeap();
+        minHeap.insert(1);
+        minHeap.insert(3);
+        minHeap.insert(6);
+        minHeap.insert(54);
+        minHeap.insert(23);
+        minHeap.insert(4);
+        minHeap.insert(0);
+        minHeap.insert(42);
 
     }
 
