@@ -65,11 +65,13 @@ public class MyLinkedList<T> implements MyListInterface<T> {
 
     @Override
     public T getFirst() {
+        if(head == null) return null;
         return head.element;
     }
 
     @Override
     public T getLast() {
+        if(tail == null) return null;
         return tail.element;
     }
 
@@ -83,6 +85,10 @@ public class MyLinkedList<T> implements MyListInterface<T> {
 
     @Override
     public void removeFirst() {
+        if(head == tail) {
+            clear();
+            return;
+        }
         head = head.next;
         head.prev = null;
         size--;
@@ -90,6 +96,10 @@ public class MyLinkedList<T> implements MyListInterface<T> {
 
     @Override
     public void removeLast() {
+        if(tail == head) {
+            clear();
+            return;
+        }
         tail = tail.prev;
         tail.next = null;
         size--;

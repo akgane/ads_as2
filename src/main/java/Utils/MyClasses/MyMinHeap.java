@@ -5,7 +5,6 @@ import Utils.MyClasses.MyLinkedList;
 
 public class MyMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T> {
     private MyArrayList<T> arrayList;
-    T smallest;
 
     public MyMinHeap(){
         arrayList = new MyArrayList<T>();
@@ -19,10 +18,11 @@ public class MyMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T>
 
     @Override
     public void removeSmallest() {
-        T biggest = arrayList.getLast();
+        if(arrayList.size() == 0) return;
+        T last = arrayList.getLast();
+        arrayList.set(0, last);
         arrayList.removeLast();
-        arrayList.set(0, biggest);
-
+        checkHeapDown(0);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class MyMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T>
 
     @Override
     public void clear() {
-
+        arrayList.clear();
     }
 
     private void checkHeap(int index){
@@ -49,7 +49,15 @@ public class MyMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T>
     }
 
     private void checkHeapDown(int index){
-
+        int left = leftChild(index);
+        int right = rightChild(index);
+        int swapIndex = index;
+        if(left < arrayList.size() && arrayList.get(swapIndex).compareTo(arrayList.get(left)) > 0) swapIndex = left;
+        if(right < arrayList.size() && arrayList.get(swapIndex).compareTo(arrayList.get(right)) > 0) swapIndex = right;
+        if(swapIndex != index){
+            swapElements(swapIndex, index);
+            checkHeapDown(swapIndex);
+        }
     }
 
     void swapElements(int i, int j){

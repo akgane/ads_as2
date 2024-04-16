@@ -1,9 +1,7 @@
 import Utils.MyClasses.MyArrayList;
 import Utils.MyClasses.MyMinHeap;
+import Utils.MyClasses.MyQueue;
 import Utils.MyClasses.MyStack;
-
-import java.util.ArrayList;
-
 
 @SuppressWarnings("unchecked")
 public class MyApplication {
@@ -91,16 +89,42 @@ public class MyApplication {
 //        System.out.println(stack.get());
 
 
-        MyMinHeap minHeap = new MyMinHeap();
-        minHeap.insert(1);
-        minHeap.insert(3);
-        minHeap.insert(6);
-        minHeap.insert(54);
-        minHeap.insert(23);
-        minHeap.insert(4);
-        minHeap.insert(0);
-        minHeap.insert(42);
+//        MyMinHeap minHeap = new MyMinHeap();
+//        minHeap.insert(1);
+//        minHeap.insert(3);
+//        minHeap.insert(6);
+//        minHeap.insert(54);
+//        minHeap.insert(23);
+//        minHeap.insert(4);
+//        minHeap.insert(0);
+//        minHeap.insert(42);
+//
+//        for(int i = 0; i < 7; i++){
+//            System.out.println((i + 1) + ": " + minHeap.get(i));
+//        }
+//
+//        minHeap.removeSmallest();
+//
+//        for(int i = 0; i < 7; i++){
+//            System.out.println((i + 1) + ": " + minHeap.get(i));
+//        }
 
+
+        MyQueue queue = new MyQueue();
+        queue.enqueue(3);
+        queue.enqueue(24);
+        queue.enqueue(31);
+        queue.enqueue(1);
+
+        System.out.println(queue.peek());
+        queue.dequeue();
+        System.out.println(queue.peek());
+        queue.dequeue();
+        System.out.println(queue.peek());
+        queue.dequeue();
+        System.out.println(queue.peek());
+        queue.dequeue();
+        System.out.println(queue.peek());
     }
 
     static void printArr(MyArrayList arr, String m){
