@@ -2,11 +2,23 @@ import Utils.MyClasses.MyArrayList;
 import Utils.MyClasses.MyMinHeap;
 import Utils.MyClasses.MyQueue;
 import Utils.MyClasses.MyStack;
+import Utils.MyClasses.MyLinkedList;
 
 @SuppressWarnings("unchecked")
 public class MyApplication {
     public static void main(String[] args) {
-//        MyArrayList arr = new MyArrayList();
+        MyArrayList arr = new MyArrayList();
+
+        arr.add("asd");
+        arr.add("cx");
+        arr.add("bvc");
+        arr.add("zxc");
+        arr.add("d3");
+        arr.add("f2");
+        arr.add("12b");
+
+        arr.sort();
+        printArr(arr, "");
 //
 //        arr.add(12);
 //        arr.add("asd");
@@ -53,6 +65,16 @@ public class MyApplication {
 
 
 //        MyLinkedList linkedList = new MyLinkedList();
+//        linkedList.add(2);
+//        linkedList.add(54);
+//        linkedList.add(32);
+//        linkedList.add(3);
+//        linkedList.add(65);
+//        linkedList.add(94);
+//
+//        linkedList.sort();
+//        printLinked(linkedList.toArray(), "");
+
 //        linkedList.add("asd");
 //        linkedList.add(12);
 //        linkedList.add('c');
@@ -110,21 +132,21 @@ public class MyApplication {
 //        }
 
 
-        MyQueue queue = new MyQueue();
-        queue.enqueue(3);
-        queue.enqueue(24);
-        queue.enqueue(31);
-        queue.enqueue(1);
-
-        System.out.println(queue.peek());
-        queue.dequeue();
-        System.out.println(queue.peek());
-        queue.dequeue();
-        System.out.println(queue.peek());
-        queue.dequeue();
-        System.out.println(queue.peek());
-        queue.dequeue();
-        System.out.println(queue.peek());
+//        MyQueue queue = new MyQueue();
+//        queue.enqueue(3);
+//        queue.enqueue(24);
+//        queue.enqueue(31);
+//        queue.enqueue(1);
+//
+//        System.out.println(queue.peek());
+//        queue.dequeue();
+//        System.out.println(queue.peek());
+//        queue.dequeue();
+//        System.out.println(queue.peek());
+//        queue.dequeue();
+//        System.out.println(queue.peek());
+//        queue.dequeue();
+//        System.out.println(queue.peek());
     }
 
     static void printArr(MyArrayList arr, String m){

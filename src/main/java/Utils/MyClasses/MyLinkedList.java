@@ -3,6 +3,7 @@ package Utils.MyClasses;
 import Utils.Exceptions.MyIndexOutOfBoundsException;
 import Utils.Exceptions.MyNoSuchElementException;
 import Utils.Interfaces.MyListInterface;
+import Utils.Sorting.MergeSort;
 
 import java.util.Iterator;
 

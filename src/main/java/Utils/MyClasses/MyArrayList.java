@@ -3,7 +3,6 @@ package Utils.MyClasses;
 import Utils.Exceptions.MyNoSuchElementException;
 import Utils.Exceptions.MyIndexOutOfBoundsException;
 import Utils.Interfaces.MyListInterface;
-import Utils.Sorting.Comparator;
 import Utils.Sorting.MergeSort;
 
 import java.util.Iterator;
@@ -89,7 +88,7 @@ public class MyArrayList<T> implements MyListInterface<T> {
 
     @Override
     public void sort() {
-
+        arr = (T[]) MergeSort.mergeSort(arr);
     }
 
     @Override
