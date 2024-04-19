@@ -108,7 +108,7 @@ public class MyLinkedList<T> implements MyListInterface<T> {
 
     @Override
     public void sort() {
-
+        arrayToLinkedList(MergeSort.mergeSort(toArray()));
     }
 
     @Override
@@ -157,6 +157,11 @@ public class MyLinkedList<T> implements MyListInterface<T> {
 
     private void checkIndex(int index){
         if(index < 0 || index >= size) throw new MyIndexOutOfBoundsException(index);
+    }
+
+    private void arrayToLinkedList(Object[] arr){
+        clear();
+        for(Object a : arr) add((T) a);
     }
 
     @Override

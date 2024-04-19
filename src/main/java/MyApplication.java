@@ -7,18 +7,18 @@ import Utils.MyClasses.MyLinkedList;
 @SuppressWarnings("unchecked")
 public class MyApplication {
     public static void main(String[] args) {
-        MyArrayList arr = new MyArrayList();
-
-        arr.add("asd");
-        arr.add("cx");
-        arr.add("bvc");
-        arr.add("zxc");
-        arr.add("d3");
-        arr.add("f2");
-        arr.add("12b");
-
-        arr.sort();
-        printArr(arr, "");
+//        MyArrayList arr = new MyArrayList();
+//
+//        arr.add("asd");
+//        arr.add("cx");
+//        arr.add("bvc");
+//        arr.add("zxc");
+//        arr.add("d3");
+//        arr.add("f2");
+//        arr.add("12b");
+//
+//        arr.sort();
+//        printArr(arr, "");
 //
 //        arr.add(12);
 //        arr.add("asd");
@@ -65,12 +65,12 @@ public class MyApplication {
 
 
 //        MyLinkedList linkedList = new MyLinkedList();
-//        linkedList.add(2);
-//        linkedList.add(54);
-//        linkedList.add(32);
-//        linkedList.add(3);
-//        linkedList.add(65);
-//        linkedList.add(94);
+//        linkedList.add("1");
+//        linkedList.add("d");
+//        linkedList.add("vcs");
+//        linkedList.add("dgf");
+//        linkedList.add("jhg");
+//        linkedList.add("zxc");
 //
 //        linkedList.sort();
 //        printLinked(linkedList.toArray(), "");
