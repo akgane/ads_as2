@@ -140,7 +140,7 @@ public class MyArrayList<T> implements MyListInterface<T> {
     }
 
     public void increaseBuffer() {
-        T[] newArr = (T[]) new Object[arr.length + 1];
+        T[] newArr = (T[]) new Object[arr.length * 2];
         System.arraycopy(arr, 0, newArr, 0, arr.length);
         arr = newArr;
     }

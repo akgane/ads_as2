@@ -71,10 +71,6 @@ public class MyApplication {
 //        linkedList.add("dgf");
 //        linkedList.add("jhg");
 //        linkedList.add("zxc");
-//
-//        linkedList.sort();
-//        printLinked(linkedList.toArray(), "");
-
 //        linkedList.add("asd");
 //        linkedList.add(12);
 //        linkedList.add('c');

@@ -2,8 +2,6 @@ package Utils.MyClasses;
 
 import Utils.Interfaces.MyStackInterface;
 
-import java.util.concurrent.CopyOnWriteArrayList;
-
 public class MyStack<T> implements MyStackInterface<T> {
     private MyLinkedList<T> linkedList;
     int top;

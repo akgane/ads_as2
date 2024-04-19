@@ -10,24 +10,18 @@ import java.util.Iterator;
 @SuppressWarnings("unchecked")
 public class MyLinkedList<T> implements MyListInterface<T> {
     private MyNode<T> head;
-    private MyNode<T> tail;
     private int size;
 
     public MyLinkedList(){
         head = null;
-        tail = null;
         size = 0;
     }
 
     @Override
     public void add(T item) {
-        MyNode<T> newNode = new MyNode<>(null, item, null);
+        MyNode newNode = new MyNode(item, null);
         if(head == null) head = newNode;
-        else{
-            newNode.prev = tail;
-            tail.next = newNode;
-        }
-        tail = newNode;
+        else getNode(size - 1).next = newNode;
         size++;
     }
 
@@ -39,14 +33,14 @@ public class MyLinkedList<T> implements MyListInterface<T> {
     @Override
     public void add(int index, T item) {
         checkIndex(index);
-        MyNode<T> newNode = new MyNode<>(getNode(index).prev, item, getNode(index));
-
-        if(newNode.prev != null) newNode.prev.next = newNode;
-        else head = newNode;
-
-        if(newNode.next != null) newNode.next.prev = newNode;
-        else tail = newNode;
-        size++;
+        MyNode newNode = new MyNode(item, null);
+        if(index == 0){
+            newNode.next = head.next;
+            head = newNode;
+        } else{
+          newNode.next = getNode(index).next;
+          getNode(index - 1).next = newNode;
+        }
     }
 
     @Override
@@ -66,44 +60,36 @@ public class MyLinkedList<T> implements MyListInterface<T> {
 
     @Override
     public T getFirst() {
-        if(head == null) return null;
-        return head.element;
+        return get(0);
     }
 
     @Override
     public T getLast() {
-        if(tail == null) return null;
-        return tail.element;
+        return get(size - 1);
     }
 
     @Override
     public void remove(int index) {
-        MyNode<T> nodeToRemove = getNode(index);
-        nodeToRemove.prev.next = nodeToRemove.next;
-        nodeToRemove.next.prev = nodeToRemove.prev;
+        checkIndex(index);
+        if(index == 0){
+            head = head.next;
+        }else if(index == size - 1){
+            getNode(size - 2).next = null;
+        }
+        else{
+            getNode(index - 1).next = getNode(index).next;
+        }
         size--;
     }
 
     @Override
     public void removeFirst() {
-        if(head == tail) {
-            clear();
-            return;
-        }
-        head = head.next;
-        head.prev = null;
-        size--;
+        remove(0);
     }
 
     @Override
     public void removeLast() {
-        if(tail == head) {
-            clear();
-            return;
-        }
-        tail = tail.prev;
-        tail.next = null;
-        size--;
+        remove(size - 1);
     }
 
     @Override
@@ -139,7 +125,6 @@ public class MyLinkedList<T> implements MyListInterface<T> {
     @Override
     public void clear() {
         head = null;
-        tail = null;
         size = 0;
     }
 
@@ -171,12 +156,10 @@ public class MyLinkedList<T> implements MyListInterface<T> {
 
     private static class MyNode<E>{
         private E element;
-        private MyNode<E> prev;
         private MyNode<E> next;
 
-        MyNode(MyNode<E> prev, E element, MyNode<E> next){
+        MyNode(E element, MyNode<E> next){
             this.element = element;
-            this.prev = prev;
             this.next = next;
         }
     }

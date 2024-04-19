@@ -2,8 +2,6 @@ package Utils.MyClasses;
 
 import Utils.Interfaces.MyQueueInterface;
 
-import java.util.concurrent.CopyOnWriteArrayList;
-
 @SuppressWarnings("unchecked")
 public class MyQueue<T> implements MyQueueInterface<T> {
     private MyLinkedList linkedList;
