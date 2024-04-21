@@ -1,7 +1,6 @@
 package Utils.MyClasses;
 
 import Utils.Interfaces.MyMinHeapInterface;
-import Utils.MyClasses.MyLinkedList;
 
 public class MyMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T> {
     private MyArrayList<T> arrayList;
