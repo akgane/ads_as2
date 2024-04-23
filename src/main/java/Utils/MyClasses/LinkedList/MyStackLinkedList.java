@@ -1,12 +1,12 @@
-package Utils.MyClasses;
+package Utils.MyClasses.LinkedList;
 
 import Utils.Interfaces.MyStackInterface;
 
-public class MyStack<T> implements MyStackInterface<T> {
+public class MyStackLinkedList<T> implements MyStackInterface<T> {
     private MyLinkedList<T> linkedList;
     int top;
 
-    public MyStack(){
+    public MyStackLinkedList(){
         linkedList = new MyLinkedList<T>();
         top = 0;
     }
@@ -32,5 +32,15 @@ public class MyStack<T> implements MyStackInterface<T> {
     public void clear() {
         linkedList = new MyLinkedList<T>();
         top = 0;
+    }
+
+    @Override
+    public int size() {
+        return linkedList.size();
+    }
+
+    @Override
+    public boolean exists(Object object) {
+        return linkedList.exists(object);
     }
 }

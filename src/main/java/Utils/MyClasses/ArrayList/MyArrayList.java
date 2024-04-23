@@ -1,4 +1,4 @@
-package Utils.MyClasses;
+package Utils.MyClasses.ArrayList;
 
 import Utils.Exceptions.MyNoSuchElementException;
 import Utils.Exceptions.MyIndexOutOfBoundsException;
@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 @SuppressWarnings("unchecked")
 public class MyArrayList<T> implements MyListInterface<T> {
-    private T[] arr; //Array of generic type, which contains all elements of MyArrayList
+    private T[] arr; //Array of generic type T, which contains all elements of MyArrayList
     private int size; //Number of elements in MyArrayList
     private final int DEFAULT_SIZE = 5; //Default size of MyArrayList, which is set on array initialization
 
@@ -225,6 +225,11 @@ public class MyArrayList<T> implements MyListInterface<T> {
         return size;
     }
 
+    @Override
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
     /**
      * This private method is used to check if number of elements in
      * list are equal to buffer size. If it equals, array's buffer should be increased.
@@ -259,7 +264,7 @@ public class MyArrayList<T> implements MyListInterface<T> {
      * It needs to allow new elements to be added.
      */
     private void increaseBuffer() {
-        T[] newArr = (T[]) new Object[arr.length * 2];
+        T[] newArr = (T[]) new Object[arr.length + 1];
         System.arraycopy(arr, 0, newArr, 0, arr.length);
         arr = newArr;
     }
@@ -275,10 +280,6 @@ public class MyArrayList<T> implements MyListInterface<T> {
         return new MyIterator<>();
     }
 
-    /**
-     * Private inner class implementing the Iterator interface.
-     * @param <E>
-     */
     private class MyIterator<E> implements Iterator<E>{
         private int currentIndex = 0;
         @Override

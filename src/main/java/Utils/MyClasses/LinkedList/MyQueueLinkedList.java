@@ -1,12 +1,12 @@
-package Utils.MyClasses;
+package Utils.MyClasses.LinkedList;
 
 import Utils.Interfaces.MyQueueInterface;
 
 @SuppressWarnings("unchecked")
-public class MyQueue<T> implements MyQueueInterface<T> {
+public class MyQueueLinkedList<T> implements MyQueueInterface<T> {
     private MyLinkedList linkedList;
 
-    public MyQueue(){
+    public MyQueueLinkedList(){
         linkedList = new MyLinkedList<T>();
     }
 
@@ -27,11 +27,16 @@ public class MyQueue<T> implements MyQueueInterface<T> {
 
     @Override
     public boolean isEmpty() {
-        return linkedList.size() > 0;
+        return linkedList.isEmpty();
     }
 
     @Override
     public int size() {
         return linkedList.size();
+    }
+
+    @Override
+    public boolean exists(Object object) {
+        return linkedList.exists(object);
     }
 }

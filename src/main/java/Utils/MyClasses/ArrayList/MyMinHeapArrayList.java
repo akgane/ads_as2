@@ -1,11 +1,11 @@
-package Utils.MyClasses;
+package Utils.MyClasses.ArrayList;
 
 import Utils.Interfaces.MyMinHeapInterface;
 
-public class MyMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T> {
+public class MyMinHeapArrayList<T extends Comparable<T>> implements MyMinHeapInterface<T> {
     private MyArrayList<T> arrayList;
 
-    public MyMinHeap(){
+    public MyMinHeapArrayList(){
         arrayList = new MyArrayList<T>();
     }
 
@@ -17,7 +17,7 @@ public class MyMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T>
 
     @Override
     public void removeSmallest() {
-        if(arrayList.size() == 0) return;
+        if(arrayList.isEmpty()) return;
         T last = arrayList.getLast();
         arrayList.set(0, last);
         arrayList.removeLast();
@@ -31,12 +31,22 @@ public class MyMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T>
 
     @Override
     public T getSmallest() {
-        return arrayList.get(0);
+        return arrayList.getFirst();
     }
 
     @Override
     public void clear() {
         arrayList.clear();
+    }
+
+    @Override
+    public Object[] toArray() {
+        return arrayList.toArray();
+    }
+
+    @Override
+    public boolean exists(Object object) {
+        return arrayList.exists(object);
     }
 
     private void checkHeap(int index){
@@ -63,21 +73,21 @@ public class MyMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T>
         arrayList.swapElements(i, j);
     }
 
-    boolean checkParent(int index){
+    private boolean checkParent(int index){
         return arrayList.get(parentIndex(index)).compareTo(arrayList.get(index)) > 0;
     }
 
-    int parentIndex(int index){
+    private int parentIndex(int index){
         arrayList.checkIndex(index);
         if(index >= 0 && index <= 2) return 0;
         return (index % 2 == 0 ? (index - 2) / 2 : (index - 1) / 2);
     }
 
-    int leftChild(int index){
+    private int leftChild(int index){
         return index * 2 + 1;
     }
 
-    int rightChild(int index){
+    private int rightChild(int index){
         return index * 2 + 2;
     }
 }

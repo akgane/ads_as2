@@ -1,21 +1,19 @@
-import Utils.MyClasses.MyArrayList;
-import Utils.MyClasses.MyMinHeap;
-import Utils.MyClasses.MyQueue;
-import Utils.MyClasses.MyStack;
-import Utils.MyClasses.MyLinkedList;
+import Utils.MyClasses.ArrayList.MyArrayList;
+import Utils.MyClasses.LinkedList.MyLinkedList;
 
 @SuppressWarnings("unchecked")
 public class MyApplication {
     public static void main(String[] args) {
 //        MyArrayList arr = new MyArrayList();
-//
-//        arr.add("asd");
-//        arr.add("cx");
-//        arr.add("bvc");
-//        arr.add("zxc");
-//        arr.add("d3");
-//        arr.add("f2");
-//        arr.add("12b");
+////
+//        arr.add(1);
+//        arr.add(12);
+//        arr.add(15);
+//        arr.add(17);
+//        arr.add(12);
+//        arr.add(51);
+//        arr.add(15);
+//        arr.add(13);
 //
 //        arr.sort();
 //        printArr(arr, "");
@@ -64,16 +62,26 @@ public class MyApplication {
 //        printArr(arr, "After clear(): ");
 
 
-//        MyLinkedList linkedList = new MyLinkedList();
-//        linkedList.add("1");
-//        linkedList.add("d");
-//        linkedList.add("vcs");
-//        linkedList.add("dgf");
-//        linkedList.add("jhg");
-//        linkedList.add("zxc");
-//        linkedList.add("asd");
-//        linkedList.add(12);
-//        linkedList.add('c');
+        MyLinkedList linkedList = new MyLinkedList();
+        linkedList.add("1");
+        linkedList.add("d");
+        linkedList.add("vcs");
+        linkedList.add("dgf");
+        linkedList.add("jhg");
+        linkedList.add("zxc");
+//        linkedList.add(2);
+//        linkedList.add(54);
+//        linkedList.add(32);
+//        linkedList.add(3);
+//        linkedList.add(65);
+//        linkedList.add(94);
+//
+//        linkedList.sort();
+//        printLinked(linkedList.toArray(), "");
+
+        linkedList.add("asd");
+        linkedList.add(12);
+        linkedList.add('c');
 //
 //        printLinked(linkedList.toArray(), "First ll: ");
 //

@@ -6,4 +6,6 @@ public interface MyMinHeapInterface<T> {
     T get(int index);
     T getSmallest();
     void clear();
+    Object[] toArray();
+    boolean exists(Object object);
 }

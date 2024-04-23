@@ -5,4 +5,7 @@ public interface MyStackInterface<T> {
     void pop();
     T get();
     void clear();
+    int size();
+    boolean exists(Object object);
+
 }

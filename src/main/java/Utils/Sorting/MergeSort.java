@@ -1,7 +1,6 @@
 package Utils.Sorting;
 
 
-//TODO CLASS
 public class MergeSort{
     public static Object[] mergeSort(Object[] arr){
         if(arr.length == 1) return arr;

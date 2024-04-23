@@ -6,4 +6,5 @@ public interface MyQueueInterface<T> {
     T peek();
     boolean isEmpty();
     int size();
+    boolean exists(Object object);
 }
