@@ -1,6 +1,5 @@
 package Utils.Console;
 
-import Utils.Exceptions.MyInputMismatchException;
 import Utils.Interfaces.MyListInterface;
 import Utils.Interfaces.MyMinHeapInterface;
 import Utils.Interfaces.MyQueueInterface;
@@ -29,8 +28,7 @@ public class ConsoleHandler {
                     handleChoose(option);
                     reader.readLine();
                 }
-            } catch (IOException | NumberFormatException e) {
-                continue;
+            } catch (IOException | NumberFormatException ignored) {
             }
         }
     }
@@ -59,11 +57,6 @@ public class ConsoleHandler {
 
     static int getInt(BufferedReader reader) throws IOException {
         return Integer.parseInt(reader.readLine());
-    }
-
-
-    public static void printArr(Object[] arr){
-        printArr(arr, "");
     }
 
     public static void printArr(Object[] arr, String m){

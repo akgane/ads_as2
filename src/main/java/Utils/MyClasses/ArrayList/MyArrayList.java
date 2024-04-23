@@ -79,11 +79,7 @@ public class MyArrayList<T> implements MyListInterface<T> {
         add(0, item);
     }
 
-    /**
-     * This method is used to add new element at the end of the List.
-     * A wrapper for add(T item).
-     * @param item
-     */
+
     @Override
     public void addLast(T item) {
         add(item);

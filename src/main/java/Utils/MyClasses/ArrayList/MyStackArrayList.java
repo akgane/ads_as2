@@ -30,7 +30,7 @@ public class MyStackArrayList<T> implements MyStackInterface<T> {
 
     @Override
     public void clear() {
-        arrayList = new MyArrayList<T>();
+        arrayList = new MyArrayList<>();
         top = 0;
     }
 

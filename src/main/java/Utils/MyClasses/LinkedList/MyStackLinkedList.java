@@ -7,7 +7,7 @@ public class MyStackLinkedList<T> implements MyStackInterface<T> {
     int top;
 
     public MyStackLinkedList(){
-        linkedList = new MyLinkedList<T>();
+        linkedList = new MyLinkedList<>();
         top = 0;
     }
 
@@ -30,7 +30,7 @@ public class MyStackLinkedList<T> implements MyStackInterface<T> {
 
     @Override
     public void clear() {
-        linkedList = new MyLinkedList<T>();
+        linkedList = new MyLinkedList<>();
         top = 0;
     }
 

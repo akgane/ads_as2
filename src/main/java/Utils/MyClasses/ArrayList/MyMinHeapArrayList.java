@@ -6,7 +6,7 @@ public class MyMinHeapArrayList<T extends Comparable<T>> implements MyMinHeapInt
     private MyArrayList<T> arrayList;
 
     public MyMinHeapArrayList(){
-        arrayList = new MyArrayList<T>();
+        arrayList = new MyArrayList<>();
     }
 
     @Override
