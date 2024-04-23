@@ -132,6 +132,7 @@ public class MyArrayList<T> implements MyListInterface<T> {
         checkIndex(index);
         for(int i = index + 1; i < size; i++) arr[i - 1] = arr[i];
         size--;
+        decreaseBuffer();
     }
 
     /**
@@ -266,6 +267,16 @@ public class MyArrayList<T> implements MyListInterface<T> {
     private void increaseBuffer() {
         T[] newArr = (T[]) new Object[arr.length + 1];
         System.arraycopy(arr, 0, newArr, 0, arr.length);
+        arr = newArr;
+    }
+
+    private void decreaseBuffer(){
+        decreaseBuffer(1);
+    }
+
+    private void decreaseBuffer(int count){
+        T[] newArr = (T[]) new Object[arr.length - count];
+        System.arraycopy(arr, 0, newArr, 0, arr.length - 1);
         arr = newArr;
     }
 

@@ -43,4 +43,9 @@ public class MyStackArrayList<T> implements MyStackInterface<T> {
     public boolean exists(Object object) {
         return arrayList.exists(object);
     }
+
+    @Override
+    public Object[] toArray() {
+        return arrayList.toArray();
+    }
 }

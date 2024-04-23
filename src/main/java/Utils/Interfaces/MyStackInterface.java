@@ -7,5 +7,5 @@ public interface MyStackInterface<T> {
     void clear();
     int size();
     boolean exists(Object object);
-
+    Object[] toArray();
 }

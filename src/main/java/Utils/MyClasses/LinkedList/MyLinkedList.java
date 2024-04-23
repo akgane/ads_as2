@@ -26,8 +26,8 @@ public class MyLinkedList<T> implements MyListInterface<T> {
             head = newNode;
         }
         else{
-            getNode(size - 1).next = newNode;
-            newNode.prev = getNode(size - 1);
+            newNode.prev = tail;
+            tail.next = newNode;
         }
         tail = newNode;
         size++;
@@ -43,10 +43,11 @@ public class MyLinkedList<T> implements MyListInterface<T> {
         checkIndex(index);
         MyNode newNode = new MyNode(item, null, null);
         if(index == 0){
-            newNode.next = head.next;
+            newNode.next = head;
             head.prev = newNode;
             head = newNode;
-        } else{
+        }
+        else{
             MyNode left = getNode(index - 1);
             MyNode right = getNode(index);
             left.next = newNode;

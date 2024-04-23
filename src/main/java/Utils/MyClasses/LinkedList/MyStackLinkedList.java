@@ -43,4 +43,9 @@ public class MyStackLinkedList<T> implements MyStackInterface<T> {
     public boolean exists(Object object) {
         return linkedList.exists(object);
     }
+
+    @Override
+    public Object[] toArray() {
+        return linkedList.toArray();
+    }
 }

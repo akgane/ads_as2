@@ -7,4 +7,6 @@ public interface MyQueueInterface<T> {
     boolean isEmpty();
     int size();
     boolean exists(Object object);
+    Object[] toArray();
+    void clear();
 }

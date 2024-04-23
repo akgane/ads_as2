@@ -39,4 +39,14 @@ public class MyQueueLinkedList<T> implements MyQueueInterface<T> {
     public boolean exists(Object object) {
         return linkedList.exists(object);
     }
+
+    @Override
+    public Object[] toArray() {
+        return linkedList.toArray();
+    }
+
+    @Override
+    public void clear() {
+        linkedList.clear();
+    }
 }
