@@ -30,5 +30,6 @@ public class Constants {
             {DS_ArrayList, DS_LinkedList, DS_MinHeap_AL, DS_Queue_AL , DS_Stack_AL,
              DS_MinHeap_LL, DS_Queue_LL, DS_Stack_LL};
 
-    public static final String ARR_AFTER_OPERATION = "%s after this operation: ";
+    public static final String ARR_AFTER_OPERATION = "%s after this operation (elapsed time: %f): ";
+    public static final String ELAPSED = "Elapsed time: %f. ";
 }

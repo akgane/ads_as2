@@ -272,7 +272,7 @@ public class MyArrayList<T> implements MyListInterface<T> {
 
     private void decreaseBuffer(int count){
         T[] newArr = (T[]) new Object[arr.length - count];
-        System.arraycopy(arr, 0, newArr, 0, arr.length - 1);
+        System.arraycopy(arr, 0, newArr, 0, arr.length - count);
         arr = newArr;
     }
 
